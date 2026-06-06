@@ -69,7 +69,7 @@ export default function Home() {
   //   }
   // }, [isLoading])
   return (
-    <main className='w-screen min-h-screen bg-gray-100 flex selection:bg-gray-200 selection:text-gray-800 overflow-hidden'>
+    <main className='w-dvw min-h-dvh bg-gray-100 flex selection:bg-gray-200 selection:text-gray-800 overflow-hidden'>
       <button className="md:hidden block absolute top-4 left-4 cursor-pointer z-40" onClick={() => setMenuOpen(!menuOpen)}>
         <MenuIcon />
       </button>
@@ -112,8 +112,8 @@ export default function Home() {
         }
       </div>
 
-      <div className="right-section lg:w-5/6 w-4/6 flex-1 md:flex-initial relative flex flex-col items-center justify-end gap-10 overflow-hidden">
-        {!generating && <h1 className="lg:text-8xl md:text-6xl text-3xl font-extrabold text-gray-300 w-3xl mx-auto text-center select-none">Your email will appear here</h1>}
+      <div className="right-section lg:w-5/6 w-4/6 flex-1 md:flex-initial relative flex flex-col items-center md:justify-center justify-end gap-10 overflow-hidden">
+        {!generating && <h1 className="lg:text-8xl md:text-6xl text-3xl font-extrabold md:block hidden text-gray-300 max-w-3xl mx-auto text-center select-none">Your email will appear here</h1>}
         {isLoading ? <Cloud3Icon /> :
           messages.map((message) => (
             message.role === "assistant" &&
