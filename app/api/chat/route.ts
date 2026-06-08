@@ -111,4 +111,16 @@ export async function POST(request: NextRequest) {
   });
 
   return toServerSentEventsResponse(stream);
+
+  // const sseResponse = toServerSentEventsResponse(stream);
+
+  // // Force Next.js / edge infra not to buffer
+  // const headers = new Headers(sseResponse.headers);
+  // headers.set("Cache-Control", "no-cache, no-transform");
+  // headers.set("X-Accel-Buffering", "no"); // disables nginx buffering too
+
+  // return new NextResponse(sseResponse.body, {
+  //   status: sseResponse.status,
+  //   headers,
+  // });
 }
